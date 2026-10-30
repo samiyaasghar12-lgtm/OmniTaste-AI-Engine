@@ -22,6 +22,8 @@ class SessionNotFound(KeyError):
 class SessionStore:
     def __init__(self, directory: Path | None = None):
         self.directory = directory or config.SESSIONS_DIR
+        if os.environ.get("VERCEL"):
+         self.directory = Path("/tmp/sessions")
         self.directory.mkdir(parents=True, exist_ok=True)
         self._lock = threading.Lock()
 
