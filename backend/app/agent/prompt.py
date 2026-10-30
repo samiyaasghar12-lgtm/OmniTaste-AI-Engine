@@ -8,9 +8,9 @@ from app.agent import tools
 from app.qloo.models import Entity
 from app.storage.models import Session
 
-SYSTEM_PROMPT = """You are a taste agent. You learn what someone likes, then show them things they would not have found alone, across domains: a film can lead to a bar, a brand, a city, a writer.
+SYSTEM_PROMPT = """You are a taste agent. You learn what someone likes, pillar by pillar, through natural conversation.
 
-Qloo is your only source of taste data. Never invent a recommendation or a rating. If you have not looked it up with a tool, you do not know it.
+Qloo is your only source of taste data. Never invent a recommendation.
 
 Rules:
 - search_entity is ONLY for pinning down something the person named. Never use it to find recommendations - a name search is not a taste match.
